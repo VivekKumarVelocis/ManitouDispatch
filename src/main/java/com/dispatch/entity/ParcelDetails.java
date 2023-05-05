@@ -3,8 +3,6 @@ package com.dispatch.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -22,17 +20,17 @@ public class ParcelDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
+	private String parcelNo;
 	private String parcelGrossWeight;
 	private String parcelHeight;
 	private String parcelWidth;
 	private String parcelLength;
 	private String parcelPac;
+	private String parcelBarCode;
 	private String location;
-	private String parcelNo;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER) 
-	@JoinColumn(name="parcel_id")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "parcel_id")
 	private List<ReflexItemsDetails> items = new ArrayList<>();
 
 	public Long getId() {
@@ -67,7 +65,6 @@ public class ParcelDetails {
 		this.parcelWidth = parcelWidth;
 	}
 
-	
 	public String getParcelLength() {
 		return parcelLength;
 	}
@@ -108,7 +105,6 @@ public class ParcelDetails {
 		this.items = items;
 	}
 
-
 	public ParcelDetails() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -128,14 +124,12 @@ public class ParcelDetails {
 		this.items = items;
 	}
 
-	@Override
-	public String toString() {
-		return "ParcelDetails [id=" + id + ", parcelGrossWeight=" + parcelGrossWeight + ", parcelHeight=" + parcelHeight
-				+ ", parcelWidth=" + parcelWidth + ", parcelLength=" + parcelLength + ", parcelPac=" + parcelPac
-				+ ", location=" + location + ", parcelNo=" + parcelNo + ", items=" + items + "]";
+	public String getParcelBarCode() {
+		return parcelBarCode;
 	}
 
+	public void setParcelBarCode(String parcelBarCode) {
+		this.parcelBarCode = parcelBarCode;
+	}
 
-	
-	
 }

@@ -56,7 +56,7 @@ public class InvoiceServiceImpl implements InvoiceService {
 			if(allinvoices.size()==0) {
 				return new Response(ManitouConstants.FAILURE, ManitouConstants.ERROR_CODE, ManitouConstants.NO_RECORD_FOUND);
 			}else {
-				logger.info("Reflex data is fetched successfully !!!!!!!!");
+				logger.info("Invoice data is fetched successfully !!!!!!!!");
 				return new Response(ManitouConstants.SUCCESS, ManitouConstants.SUCCESS_CODE, allinvoices);
 			}
 		 

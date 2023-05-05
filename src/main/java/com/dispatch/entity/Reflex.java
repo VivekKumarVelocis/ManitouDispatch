@@ -34,19 +34,7 @@ public class Reflex extends BaseEntity {
 	private String companyState;
 	private String companyPincode;
 	
-	
-	private String billingName;
-	private String billingTradeName;
-	private String billingPOS;
-	private String billingGSTIN;
-	private String billingAddress1;
-	private String billingAddress2;
-	private String billingCity;
-	private String billingState;
-	
 	private String shippingtoName;
-	private String shippingtoTradeName;
-	private String shippingtoGSTIN;
 	private String shippingtoAddress1;
 	private String shippingtoAddress2;
 	private String shippingtoPlace;
@@ -55,23 +43,26 @@ public class Reflex extends BaseEntity {
 	private String shippingBillDate;
 	private String shippingBillNo;
 	
-	private String supplierGSTIN;
-	private String supplierLegalName;
-	private String supplierTradingName;
+	private String consigneeName;
+	private String consigneeAddress1;
+	private String consigneeAddress2;
+	private String consigneePlace;
+	private String consigneeState;
+	private String consigneePincode; 
+	
+
+	 
+	private String supplierName; 
 	private String supplierCity;
 	private String supplierAddress1;
 	private String supplierAddress2;
 	private String supplierState;
-	private String supplierPincode;
-	private String supplierPhone;
-	private String supplierEmail;
+	private String supplierPincode; 
 	
 	private String deliveryNo; 
-	private String deliveryDate;
-	private String deliveryLocation;
+	private String deliveryDate; 
 	private String reasonOfTransport;
 	private String transportationBy;
-	private String carrierNo;
 	private String preparationNr;
 	 
 	@OneToMany(targetEntity=ParcelDetails.class,cascade=CascadeType.ALL, fetch=FetchType.EAGER)
@@ -143,68 +134,52 @@ public class Reflex extends BaseEntity {
 		this.companyPincode = companyPincode;
 	}
 
-	public String getBillingName() {
-		return billingName;
+	public String getConsigneeName() {
+		return consigneeName;
 	}
 
-	public void setBillingName(String billingName) {
-		this.billingName = billingName;
+	public void setConsigneeName(String consigneeName) {
+		this.consigneeName = consigneeName;
 	}
 
-	public String getBillingTradeName() {
-		return billingTradeName;
+	public String getConsigneeAddress1() {
+		return consigneeAddress1;
 	}
 
-	public void setBillingTradeName(String billingTradeName) {
-		this.billingTradeName = billingTradeName;
+	public void setConsigneeAddress1(String consigneeAddress1) {
+		this.consigneeAddress1 = consigneeAddress1;
 	}
 
-	public String getBillingPOS() {
-		return billingPOS;
+	public String getConsigneeAddress2() {
+		return consigneeAddress2;
 	}
 
-	public void setBillingPOS(String billingPOS) {
-		this.billingPOS = billingPOS;
+	public void setConsigneeAddress2(String consigneeAddress2) {
+		this.consigneeAddress2 = consigneeAddress2;
 	}
 
-	public String getBillingGSTIN() {
-		return billingGSTIN;
+	public String getConsigneePlace() {
+		return consigneePlace;
 	}
 
-	public void setBillingGSTIN(String billingGSTIN) {
-		this.billingGSTIN = billingGSTIN;
+	public void setConsigneePlace(String consigneePlace) {
+		this.consigneePlace = consigneePlace;
 	}
 
-	public String getBillingAddress1() {
-		return billingAddress1;
+	public String getConsigneeState() {
+		return consigneeState;
 	}
 
-	public void setBillingAddress1(String billingAddress1) {
-		this.billingAddress1 = billingAddress1;
+	public void setConsigneeState(String consigneeState) {
+		this.consigneeState = consigneeState;
 	}
 
-	public String getBillingAddress2() {
-		return billingAddress2;
+	public String getConsigneePincode() {
+		return consigneePincode;
 	}
 
-	public void setBillingAddress2(String billingAddress2) {
-		this.billingAddress2 = billingAddress2;
-	}
-
-	public String getBillingCity() {
-		return billingCity;
-	}
-
-	public void setBillingCity(String billingCity) {
-		this.billingCity = billingCity;
-	}
-
-	public String getBillingState() {
-		return billingState;
-	}
-
-	public void setBillingState(String billingState) {
-		this.billingState = billingState;
+	public void setConsigneePincode(String consigneePincode) {
+		this.consigneePincode = consigneePincode;
 	}
 
 	public String getShippingtoName() {
@@ -213,22 +188,6 @@ public class Reflex extends BaseEntity {
 
 	public void setShippingtoName(String shippingtoName) {
 		this.shippingtoName = shippingtoName;
-	}
-
-	public String getShippingtoTradeName() {
-		return shippingtoTradeName;
-	}
-
-	public void setShippingtoTradeName(String shippingtoTradeName) {
-		this.shippingtoTradeName = shippingtoTradeName;
-	}
-
-	public String getShippingtoGSTIN() {
-		return shippingtoGSTIN;
-	}
-
-	public void setShippingtoGSTIN(String shippingtoGSTIN) {
-		this.shippingtoGSTIN = shippingtoGSTIN;
 	}
 
 	public String getShippingtoAddress1() {
@@ -287,28 +246,12 @@ public class Reflex extends BaseEntity {
 		this.shippingBillNo = shippingBillNo;
 	}
 
-	public String getSupplierGSTIN() {
-		return supplierGSTIN;
+	public String getSupplierName() {
+		return supplierName;
 	}
 
-	public void setSupplierGSTIN(String supplierGSTIN) {
-		this.supplierGSTIN = supplierGSTIN;
-	}
-
-	public String getSupplierLegalName() {
-		return supplierLegalName;
-	}
-
-	public void setSupplierLegalName(String supplierLegalName) {
-		this.supplierLegalName = supplierLegalName;
-	}
-
-	public String getSupplierTradingName() {
-		return supplierTradingName;
-	}
-
-	public void setSupplierTradingName(String supplierTradingName) {
-		this.supplierTradingName = supplierTradingName;
+	public void setSupplierName(String supplierName) {
+		this.supplierName = supplierName;
 	}
 
 	public String getSupplierCity() {
@@ -351,22 +294,6 @@ public class Reflex extends BaseEntity {
 		this.supplierPincode = supplierPincode;
 	}
 
-	public String getSupplierPhone() {
-		return supplierPhone;
-	}
-
-	public void setSupplierPhone(String supplierPhone) {
-		this.supplierPhone = supplierPhone;
-	}
-
-	public String getSupplierEmail() {
-		return supplierEmail;
-	}
-
-	public void setSupplierEmail(String supplierEmail) {
-		this.supplierEmail = supplierEmail;
-	}
-
 	public String getDeliveryNo() {
 		return deliveryNo;
 	}
@@ -381,14 +308,6 @@ public class Reflex extends BaseEntity {
 
 	public void setDeliveryDate(String deliveryDate) {
 		this.deliveryDate = deliveryDate;
-	}
-
-	public String getDeliveryLocation() {
-		return deliveryLocation;
-	}
-
-	public void setDeliveryLocation(String deliveryLocation) {
-		this.deliveryLocation = deliveryLocation;
 	}
 
 	public String getReasonOfTransport() {
@@ -407,14 +326,6 @@ public class Reflex extends BaseEntity {
 		this.transportationBy = transportationBy;
 	}
 
-	public String getCarrierNo() {
-		return carrierNo;
-	}
-
-	public void setCarrierNo(String carrierNo) {
-		this.carrierNo = carrierNo;
-	}
-
 	public String getPreparationNr() {
 		return preparationNr;
 	}
@@ -431,16 +342,18 @@ public class Reflex extends BaseEntity {
 		this.parcelDetails = parcelDetails;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	public Reflex(Long id, String dispatchNo, String companyName, String companyAddress1, String companyAddress2,
-			String companyCity, String companyState, String companyPincode, String billingName, String billingTradeName,
-			String billingPOS, String billingGSTIN, String billingAddress1, String billingAddress2, String billingCity,
-			String billingState, String shippingtoName, String shippingtoTradeName, String shippingtoGSTIN,
-			String shippingtoAddress1, String shippingtoAddress2, String shippingtoPlace, String shippingtoState,
-			String shippingtoPincode, String shippingBillDate, String shippingBillNo, String supplierGSTIN,
-			String supplierLegalName, String supplierTradingName, String supplierCity, String supplierAddress1,
-			String supplierAddress2, String supplierState, String supplierPincode, String supplierPhone,
-			String supplierEmail, String deliveryNo, String deliveryDate, String deliveryLocation,
-			String reasonOfTransport, String transportationBy, String carrierNo, String preparationNr,
+			String companyCity, String companyState, String companyPincode, String consigneeName,
+			String consigneeAddress1, String consigneeAddress2, String consigneePlace, String consigneeState,
+			String consigneePincode, String shippingtoName, String shippingtoAddress1, String shippingtoAddress2,
+			String shippingtoPlace, String shippingtoState, String shippingtoPincode, String shippingBillDate,
+			String shippingBillNo, String supplierName, String supplierCity, String supplierAddress1,
+			String supplierAddress2, String supplierState, String supplierPincode, String deliveryNo,
+			String deliveryDate, String reasonOfTransport, String transportationBy, String preparationNr,
 			List<ParcelDetails> parcelDetails) {
 		super();
 		this.id = id;
@@ -451,17 +364,13 @@ public class Reflex extends BaseEntity {
 		this.companyCity = companyCity;
 		this.companyState = companyState;
 		this.companyPincode = companyPincode;
-		this.billingName = billingName;
-		this.billingTradeName = billingTradeName;
-		this.billingPOS = billingPOS;
-		this.billingGSTIN = billingGSTIN;
-		this.billingAddress1 = billingAddress1;
-		this.billingAddress2 = billingAddress2;
-		this.billingCity = billingCity;
-		this.billingState = billingState;
+		this.consigneeName = consigneeName;
+		this.consigneeAddress1 = consigneeAddress1;
+		this.consigneeAddress2 = consigneeAddress2;
+		this.consigneePlace = consigneePlace;
+		this.consigneeState = consigneeState;
+		this.consigneePincode = consigneePincode;
 		this.shippingtoName = shippingtoName;
-		this.shippingtoTradeName = shippingtoTradeName;
-		this.shippingtoGSTIN = shippingtoGSTIN;
 		this.shippingtoAddress1 = shippingtoAddress1;
 		this.shippingtoAddress2 = shippingtoAddress2;
 		this.shippingtoPlace = shippingtoPlace;
@@ -469,22 +378,16 @@ public class Reflex extends BaseEntity {
 		this.shippingtoPincode = shippingtoPincode;
 		this.shippingBillDate = shippingBillDate;
 		this.shippingBillNo = shippingBillNo;
-		this.supplierGSTIN = supplierGSTIN;
-		this.supplierLegalName = supplierLegalName;
-		this.supplierTradingName = supplierTradingName;
+		this.supplierName = supplierName;
 		this.supplierCity = supplierCity;
 		this.supplierAddress1 = supplierAddress1;
 		this.supplierAddress2 = supplierAddress2;
 		this.supplierState = supplierState;
 		this.supplierPincode = supplierPincode;
-		this.supplierPhone = supplierPhone;
-		this.supplierEmail = supplierEmail;
 		this.deliveryNo = deliveryNo;
 		this.deliveryDate = deliveryDate;
-		this.deliveryLocation = deliveryLocation;
 		this.reasonOfTransport = reasonOfTransport;
 		this.transportationBy = transportationBy;
-		this.carrierNo = carrierNo;
 		this.preparationNr = preparationNr;
 		this.parcelDetails = parcelDetails;
 	}
@@ -498,24 +401,20 @@ public class Reflex extends BaseEntity {
 	public String toString() {
 		return "Reflex [id=" + id + ", dispatchNo=" + dispatchNo + ", companyName=" + companyName + ", companyAddress1="
 				+ companyAddress1 + ", companyAddress2=" + companyAddress2 + ", companyCity=" + companyCity
-				+ ", companyState=" + companyState + ", companyPincode=" + companyPincode + ", billingName="
-				+ billingName + ", billingTradeName=" + billingTradeName + ", billingPOS=" + billingPOS
-				+ ", billingGSTIN=" + billingGSTIN + ", billingAddress1=" + billingAddress1 + ", billingAddress2="
-				+ billingAddress2 + ", billingCity=" + billingCity + ", billingState=" + billingState
-				+ ", shippingtoName=" + shippingtoName + ", shippingtoTradeName=" + shippingtoTradeName
-				+ ", shippingtoGSTIN=" + shippingtoGSTIN + ", shippingtoAddress1=" + shippingtoAddress1
-				+ ", shippingtoAddress2=" + shippingtoAddress2 + ", shippingtoPlace=" + shippingtoPlace
-				+ ", shippingtoState=" + shippingtoState + ", shippingtoPincode=" + shippingtoPincode
-				+ ", shippingBillDate=" + shippingBillDate + ", shippingBillNo=" + shippingBillNo + ", supplierGSTIN="
-				+ supplierGSTIN + ", supplierLegalName=" + supplierLegalName + ", supplierTradingName="
-				+ supplierTradingName + ", supplierCity=" + supplierCity + ", supplierAddress1=" + supplierAddress1
-				+ ", supplierAddress2=" + supplierAddress2 + ", supplierState=" + supplierState + ", supplierPincode="
-				+ supplierPincode + ", supplierPhone=" + supplierPhone + ", supplierEmail=" + supplierEmail
-				+ ", deliveryNo=" + deliveryNo + ", deliveryDate=" + deliveryDate + ", deliveryLocation="
-				+ deliveryLocation + ", reasonOfTransport=" + reasonOfTransport + ", transportationBy="
-				+ transportationBy + ", carrierNo=" + carrierNo + ", preparationNr=" + preparationNr
-				+ ", parcelDetails=" + parcelDetails + "]";
+				+ ", companyState=" + companyState + ", companyPincode=" + companyPincode + ", consigneeName="
+				+ consigneeName + ", consigneeAddress1=" + consigneeAddress1 + ", consigneeAddress2="
+				+ consigneeAddress2 + ", consigneePlace=" + consigneePlace + ", consigneeState=" + consigneeState
+				+ ", consigneePincode=" + consigneePincode + ", shippingtoName=" + shippingtoName
+				+ ", shippingtoAddress1=" + shippingtoAddress1 + ", shippingtoAddress2=" + shippingtoAddress2
+				+ ", shippingtoPlace=" + shippingtoPlace + ", shippingtoState=" + shippingtoState
+				+ ", shippingtoPincode=" + shippingtoPincode + ", shippingBillDate=" + shippingBillDate
+				+ ", shippingBillNo=" + shippingBillNo + ", supplierName=" + supplierName + ", supplierCity="
+				+ supplierCity + ", supplierAddress1=" + supplierAddress1 + ", supplierAddress2=" + supplierAddress2
+				+ ", supplierState=" + supplierState + ", supplierPincode=" + supplierPincode + ", deliveryNo="
+				+ deliveryNo + ", deliveryDate=" + deliveryDate + ", reasonOfTransport=" + reasonOfTransport
+				+ ", transportationBy=" + transportationBy + ", preparationNr=" + preparationNr + ", parcelDetails="
+				+ parcelDetails + "]";
 	}
-	
-	
+
+
 }

@@ -7,8 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dispatch.constants.ManitouConstants;
@@ -27,10 +29,7 @@ public class InvoiceController {
 	private InvoiceService invService;
 
  
-	@PostMapping("/home")
-	public ResponseEntity<Response> home() {
-		return ResponseEntity.ok(Response.ok("ddddddddddddddddddd"));
-	}
+	 
 	@PostMapping(value = "/saveInvoicedata")
 	public ResponseEntity<Response> saveInvoiceData(@Valid @RequestBody Invoice invoice) {
 		try {
@@ -58,6 +57,25 @@ public class InvoiceController {
 			logger.info("getInvoiceData():::::::::::: method called to get invoice data");
 			
 			Response response = invService.getInvoiceData();
+			
+			if(response.getStatus()==ManitouConstants.FAILURE) {
+				return ResponseEntity.ok(Response.error("No Record Found"));
+			}else {
+				return ResponseEntity.ok(Response.ok(response));
+			}
+		} catch (Exception e) {
+			logger.error("Error in getInvoiceData() method :::: " + e.getMessage());
+			e.printStackTrace();
+			return ResponseEntity.ok(Response.error(e.getMessage()));
+		}
+	}
+	
+	@GetMapping("/getInvoicebyInvoiceNo")
+	public ResponseEntity<Response> getInvoicebyInvoiceNo(@RequestParam("invoiceNum") String invoiceNum){
+		try {
+			logger.info("getInvoicebyInvoiceNo():::::::::::: method called to get invoice data on the basis of invoice number");
+			
+			Response response = invService.getInvoicebyInvoiceNo();
 			
 			if(response.getStatus()==ManitouConstants.FAILURE) {
 				return ResponseEntity.ok(Response.error("No Record Found"));
